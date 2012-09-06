@@ -5,13 +5,33 @@ import re
 class Taxonomy(models.Model):
     dictionary = models.ForeignKey(
         'self', related_name='%(class)s_dictionary',
-        verbose_name=u'słownik',
-        help_text=u'Element nadrzędny dla parametru.'
+        verbose_name=u"Dictionary name",
+        help_text=u"Dictionary root element",
     )
-    term = models.CharField(max_length=100, blank=True, verbose_name=u'parametr', help_text=u'Możliwie krótka definicja parametru słownikowego.')
-    description = models.CharField(max_length=5000, blank=True, verbose_name=u'opis', help_text=u'Opis parametru, rozszerzona informacja itp.')
-    order = models.IntegerField(blank=True, null=True)
-    maps = models.ManyToManyField('self', related_name='%(class)s_maps', through='TaxonomyMaps', symmetrical=False, blank=True, null=True)
+    term = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name=u"term",
+        help_text=u"Short definition of term",
+    )
+    description = models.CharField(
+        max_length=5000,
+        blank=True,
+        verbose_name=u"description",
+        help_text=u"Extended description of term, etc.",
+    )
+    order = models.IntegerField(
+        blank=True,
+        null=True,
+        help_text=u"Used for custom ordering",
+    )
+    maps = models.ManyToManyField(
+        'self',
+        related_name='%(class)s_maps',
+        through='TaxonomyMaps',
+        symmetrical=False,
+        blank=True, null=True,
+    )
 
     objects = models.Manager()
     public = models.Manager()
