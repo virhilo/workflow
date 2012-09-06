@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-import re
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -11,9 +10,10 @@ class Taxonomy(models.Model):
     '''
     dictionary = models.ForeignKey(
         'self',
+        default=1,
         related_name='%(class)s_dictionary',
         verbose_name=_('dictionary name'),
-        help_text=_('Dictionary root element'),
+        help_text=_('Dictionary name (probably root).'),
     )
     term = models.CharField(
         max_length=100,
@@ -24,11 +24,12 @@ class Taxonomy(models.Model):
     description = models.CharField(
         max_length=5000,
         blank=True,
-        verbose_name=('description'),
+        verbose_name=_('description'),
         help_text=_('Extended description of term, etc.'),
     )
     order = models.IntegerField(
         blank=True, null=True,
+        verbose_name=_('order'),
         help_text=_('Used for custom ordering'),
     )
     maps = models.ManyToManyField(
