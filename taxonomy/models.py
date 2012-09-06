@@ -2,7 +2,12 @@
 from django.db import models
 import re
 
+
 class Taxonomy(models.Model):
+    """
+    General taxonomy table, collect data as term:description in primary
+    application language
+    """
     dictionary = models.ForeignKey(
         'self', related_name='%(class)s_dictionary',
         verbose_name=u"Dictionary name",
@@ -21,26 +26,27 @@ class Taxonomy(models.Model):
         help_text=u"Extended description of term, etc.",
     )
     order = models.IntegerField(
-        blank=True,
-        null=True,
+        blank=True, null=True,
         help_text=u"Used for custom ordering",
     )
     maps = models.ManyToManyField(
         'self',
-        related_name='%(class)s_maps',
-        through='TaxonomyMaps',
-        symmetrical=False,
         blank=True, null=True,
+        related_name='%(class)s_maps',
+        through="TaxonomyMaps",
+        symmetrical=False,
     )
 
     objects = models.Manager()
+    # this is used for compatibility with other webapps where public manager
+    # show data accepted for general publish
     public = models.Manager()
 
     class Meta:
-        unique_together         = [("dictionary", "term")]
-        verbose_name            = u'Słownik'
-        verbose_name_plural     = u'Słowniki'
-        ordering                = ('dictionary__term', 'order',)
+        verbose_name = u'Dictionary'
+        verbose_name_plural = u'Dictionaries'
+        unique_together = [("dictionary", "term", ), ]
+        ordering = ('dictionary__term', 'order',)
 
     def __unicode__(self):
         return u'%s' % (self.term)
@@ -60,18 +66,22 @@ class Taxonomy(models.Model):
             t[mo.group(1)] = mo.group(2)
         return t
 
+
 class TaxonomyFlat(Taxonomy):
-    def map_view(self):
-        ret = ', '.join(self.maps.values_list('term', flat=True))
-        return ret
-    def dictionary_view(self):
-        return self.dictionary
     class Meta:
         proxy = True
 
+    def map_view(self):
+        ret = ', '.join(self.maps.values_list('term', flat=True))
+        return ret
+
+    def dictionary_view(self):
+        return self.dictionary
+
+
 class TaxonomyMaps(models.Model):
-    '''
+    """
     Used for create subsets related inside taxonomy
-    '''
+    """
     label = models.ForeignKey(Taxonomy, related_name='%(class)s_label')
     map = models.ForeignKey(Taxonomy, related_name='%(class)s_map')
