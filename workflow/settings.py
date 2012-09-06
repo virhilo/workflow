@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'workflow',                      # Or path to database file if using sqlite3.
+        'NAME': 'db_workflow',                      # Or path to database file if using sqlite3.
         'USER': 'workflow',                      # Not used with sqlite3.
         'PASSWORD': 'workflowapppassword',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
