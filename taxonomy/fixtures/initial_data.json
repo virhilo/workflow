@@ -1,0 +1,11 @@
+[
+    {
+        "model": "taxonomy.taxonomy",
+        "pk": 1,
+        "fields": {
+            "dictionary": 1,
+            "term": "root",
+            "description": "Base point for all dictionaries."
+        }
+    }
+]
