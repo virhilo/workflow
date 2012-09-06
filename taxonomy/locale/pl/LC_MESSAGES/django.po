@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Adam Kochanowski <aip@aip.pl>, 2012.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-07 00:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: models.py:15
+msgid "dictionary name"
+msgstr "nazwa słownika"
+
+#: models.py:16
+msgid "Dictionary name (probably root)."
+msgstr "Nazwa słownika (prawdopodobnie root)."
+
+#: models.py:21
+msgid "term"
+msgstr "termin"
+
+#: models.py:22
+msgid "Short definition of term"
+msgstr "Krótka definicja teminu"
+
+#: models.py:27
+msgid "description"
+msgstr "Opis"
+
+#: models.py:28
+msgid "Extended description of term, etc."
+msgstr "Rozszerzony opis terminu, etc."
+
+#: models.py:32
+msgid "order"
+msgstr "koleność"
+
+#: models.py:33
+msgid "Used for custom ordering"
+msgstr "Używane do ręcznego sortowania"
+
+#: models.py:49
+msgid "dictionary"
+msgstr "słownik"
+
+#: models.py:50
+msgid "dictionaries"
+msgstr "słowniki"
+
+#, fuzzy
