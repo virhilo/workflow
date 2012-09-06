@@ -53,27 +53,11 @@ class Taxonomy(models.Model):
     def __unicode__(self):
         return u'%s' % (self.term)
 
-    def description_view(self):
-        """
-        Clear {key:value} tags from description
-        """
-        return re.sub(r"\{\w+:[^\}]+\}", "", self.description)
-
-    def extra_view(self):
-        """
-        Extract {key:value} to dict.
-        """
-        t = {}
-        for mo in re.finditer(r"\{(\w+):([^\}]+)\}", self.description):
-            t[mo.group(1)] = mo.group(2)
-        return t
-
 
 class TaxonomyFlat(Taxonomy):
     """
     String representation of specified dictionary content.
     """
-
     class Meta:
         proxy = True
 
