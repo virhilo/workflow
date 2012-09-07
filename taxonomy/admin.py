@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.db.models import Q
 from django.utils.translation import ugettext as _
 from models import Taxonomy
+from wfadmin.admin import wfModelAdmin
 
 
 class TaxonomyFilter(admin.SimpleListFilter):
@@ -21,7 +22,6 @@ class TaxonomyFilter(admin.SimpleListFilter):
                         'dictionary', flat=True,
                     )
                 ),
-                #id__gt=1,
             ).order_by('term').values_list('id', 'term',))
 
     def queryset(self, request, queryset):
@@ -38,7 +38,7 @@ class TaxonomyInline(admin.TabularInline):
     verbose_name_plural = _('dictionary terms')
 
 
-class TaxonomyAdmin(admin.ModelAdmin):
+class TaxonomyAdmin(wfModelAdmin):
     inlines = [TaxonomyInline, ]
     list_display = ('term', 'description', )
     list_filter = (TaxonomyFilter, )

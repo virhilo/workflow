@@ -1,7 +1,10 @@
 Application to create dictionaries and manage them.
 
+  * Dictionary allows custom sorting, this can do via drag rows in inline
+    terms.
+
 TODO:
   * Translation table, with fields: lang, term and description, then connect
     as inlines to taxonomy table (this conflict with dictionary term, which
-    are inlines also),
+    are inlines also).
 
