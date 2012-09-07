@@ -1,5 +1,8 @@
-[Taxonomy]
+[taxonomy]
 Dictionary managing module. Let grab all dictionary style terms into one manager.
+
+[wfadmin]
+Estensions for django admin panel.
 
 [standards]
   * every web-used model should get *public* manager (and *objects*
