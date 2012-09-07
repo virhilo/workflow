@@ -1,1 +1,7 @@
 Application to create dictionaries and manage them.
+
+TODO:
+  * Translation table, with fields: lang, term and description, then connect
+    as inlines to taxonomy table (this conflict with dictionary term, which
+    are inlines also),
+

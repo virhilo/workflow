@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -39,10 +38,9 @@ class Taxonomy(models.Model):
         through='TaxonomyMaps',
         symmetrical=False,
     )
+    #publish = models.BooleanField(default=True)
 
     objects = models.Manager()
-    # this is used for compatibility with other webapps where public manager
-    # show data accepted for general publish
     public = models.Manager()
 
     class Meta:
@@ -75,3 +73,6 @@ class TaxonomyMaps(models.Model):
     '''
     label = models.ForeignKey(Taxonomy, related_name='%(class)s_label')
     map = models.ForeignKey(Taxonomy, related_name='%(class)s_map')
+
+    objects = models.Manager()
+    public = models.Manager()

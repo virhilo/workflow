@@ -1,2 +1,6 @@
 [Taxonomy]
 Dictionary managing module. Let grab all dictionary style terms into one manager.
+
+[standards]
+  * every web-used model should get *public* manager (and *objects*
+    as default too) - public should limit query set to default viewable data,
