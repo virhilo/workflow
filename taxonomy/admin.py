@@ -13,16 +13,16 @@ class TaxonomyFilter(admin.SimpleListFilter):
     title = _('dictionary')
     parameter_name = 'dictionary'
     def lookups(self, request, model_admin):
-        return ((u'%s' % lookup[0], lookup[1]) for lookup in\
-            Taxonomy.objects.filter(
-                Q(
-                    dictionary__id=1
-                ) | Q(
-                    id__in=model_admin.queryset(request).values_list(
-                        'dictionary', flat=True,
-                    )
-                ),
-            ).order_by('term').values_list('id', 'term',))
+        qubquery = model_admin.queryset(request)
+        subquery = subquery.values_list('dictionary', flat=True)
+
+        query = Taxonomy.objects.filter(
+            Q(dictionary__id=1) | Q(id__in=subquery)
+        )
+        query = query.values_list('dictionary', flat=True).order_by('term')
+        query = query.values_list('id', 'term')
+
+        return ((u'%s' % lookup[0], lookup[1]) for lookup in query)
 
     def queryset(self, request, queryset):
         if self.value():
