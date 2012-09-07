@@ -50,7 +50,12 @@ class Taxonomy(models.Model):
         ordering = ('dictionary__term', 'order',)
 
     def __unicode__(self):
-        return u'%s' % (self.term)
+        str = self.term
+        obj = self
+        while obj.dictionary_id != 1:
+            str = u'%s/%s' % (obj.dictionary.term, str)
+            obj = obj.dictionary
+        return str
 
 
 class TaxonomyFlat(Taxonomy):

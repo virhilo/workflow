@@ -40,7 +40,7 @@ class TaxonomyInline(admin.TabularInline):
 
 class TaxonomyAdmin(wfModelAdmin):
     inlines = [TaxonomyInline, ]
-    list_display = ('term', 'description', )
+    list_display = ('term', '__unicode__', 'description', )
     list_filter = (TaxonomyFilter, )
     search_fields = ('term', 'dictionary__term', 'description', )
     save_as = True

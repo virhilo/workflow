@@ -1,0 +1,152 @@
+[
+    {
+        "pk": 12, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "zielony", 
+            "description": "", 
+            "dictionary": 10, 
+            "order": 1
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "\u017c\u00f3\u0142ty", 
+            "description": "", 
+            "dictionary": 10, 
+            "order": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "czerwony", 
+            "description": "", 
+            "dictionary": 10, 
+            "order": 3
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "od szefa", 
+            "description": "To nale\u017cy wykona\u0107.", 
+            "dictionary": 8, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "od widzimisi\u0119", 
+            "description": "To ju\u017c jak uwa\u017casz.", 
+            "dictionary": 8, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "normalne", 
+            "description": "Standardowa obs\u0142uga zadania.", 
+            "dictionary": 6, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "pilne", 
+            "description": "Wymaga natychmiastowej realizacji.", 
+            "dictionary": 6, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "do zrobienia", 
+            "description": "Do wykonania w miar\u0119 wolnych zasob\u00f3w.", 
+            "dictionary": 6, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "root", 
+            "description": "Base point for all dictionaries.", 
+            "dictionary": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "status", 
+            "description": "Statusy operacji.", 
+            "dictionary": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "priorytet", 
+            "description": "Priorytety zada\u0144.", 
+            "dictionary": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "kolory", 
+            "description": "Kolory samochod\u00f3w do wyboru...", 
+            "dictionary": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "nowy", 
+            "description": "Nowe zdarzenie.", 
+            "dictionary": 2, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "przyj\u0119te", 
+            "description": "Zdarzenie zaakceptowane do realizacji.", 
+            "dictionary": 2, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "taxonomy.taxonomy", 
+        "fields": {
+            "term": "zako\u0144czone", 
+            "description": "Zadanie zrealizowane.", 
+            "dictionary": 2, 
+            "order": null
+        }
+    }
+]
